@@ -23,7 +23,25 @@ namespace Бикбулатов41Размер
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new ProductPage());
+            MainFrame.Navigate(new AuthPage());
+            Manager.MainFrame = MainFrame;
+        }
+
+        private void Btn_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.GoBack();
+        }
+
+        private void MainFrame_ContentRendered(object sender, EventArgs e)
+        {
+            if (MainFrame.CanGoBack)
+            {
+                Btn.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Btn.Visibility = Visibility.Hidden;
+            }
         }
     }
 }

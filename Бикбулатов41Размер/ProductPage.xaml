@@ -6,18 +6,34 @@
       xmlns:local="clr-namespace:Бикбулатов41Размер"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ProductPage" FontFamily="Comic Sans MS">
+      Title="ProductPage" FontFamily="Comic Sans MS"
+      FontSize="14">
 
     <Grid>
-        <!--сортировка и прочее-->
         <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+        <!--юзер-->
+        <WrapPanel Orientation="Vertical" Margin="5 0 0 0">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Вы авторизованы как: "></TextBlock>
+                <TextBlock Name="FIOTB"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Роль: "></TextBlock>
+                <TextBlock Name="RoleTB"></TextBlock>
+            </StackPanel>
+        </WrapPanel>
+        <!--юзер-->
+        
+
+        <!--сортировка и прочее-->
+        <WrapPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
             <!--количество элементов-->
-            <TextBlock Name="CountBlock"></TextBlock>
+            <TextBlock Name="CountBlock" HorizontalAlignment="Left"></TextBlock>
             <!--количество элементов-->
 
             <!--поиск по тексту-->
@@ -53,7 +69,7 @@
         </WrapPanel>
         <!--сортировка и прочее-->
 
-        <ListView Name="ProductListView" Grid.Row="1" FontSize="14">
+        <ListView Name="ProductListView" Grid.Row="2">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
